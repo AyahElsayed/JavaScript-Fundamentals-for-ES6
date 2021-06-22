@@ -25,4 +25,15 @@ describe("arrow functions", function(){
 		expect(doubled).toEqual([2,4,6,8]);
 	});
 
+    it("lexically binds to 'this'", function(done) {
+
+		this.name = "Scott";
+	
+		setTimeout(() => {
+			expect(this.name).toBe("Scott");
+			done();
+		},15);
+		
+	});
+
 });
